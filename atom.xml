@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://imasking.me/"/>
-  <updated>2017-07-26T12:26:11.165Z</updated>
+  <updated>2017-07-31T07:28:17.912Z</updated>
   <id>http://imasking.me/</id>
   
   <author>
@@ -16,11 +16,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Java数据结构以及相关类的实现原理</title>
+    <link href="http://imasking.me/2017/07/java-container.html"/>
+    <id>http://imasking.me/2017/07/java-container.html</id>
+    <published>2017-07-29T15:17:35.000Z</published>
+    <updated>2017-07-31T07:28:17.912Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Java" scheme="http://imasking.me/categories/Java/"/>
+    
+    
+      <category term="数据结构" scheme="http://imasking.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="容器" scheme="http://imasking.me/tags/%E5%AE%B9%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>FinExpr: 一个新造的Java实现的表达式计算轮子</title>
     <link href="http://imasking.me/2017/07/finexpr-a-java-expression-evaluator.html"/>
     <id>http://imasking.me/2017/07/finexpr-a-java-expression-evaluator.html</id>
     <published>2017-07-26T12:19:57.000Z</published>
-    <updated>2017-07-26T12:26:11.165Z</updated>
+    <updated>2017-07-31T07:28:17.910Z</updated>
     
     <content type="html"><![CDATA[<p>最近在公司(一家互联网金融公司)做资产平台计费模块时，有这样的需求，贷款Loan是由公司合作的商户(贷款公司)进件过来的，对于一笔贷款Loan，在Loan的生命周期的各个阶段都需要收取一定的手续费/服务费/保证金等费用。比如审核通过时向商户收取保证金，放款成功时收取服务费。 而合作的商户很多，不同的商户每项费用的计算公式都不一样。即使是同一个商户，对于不同期数不同资产类目的贷款，收费公式也不尽相同。 所以我们就需要一个让业务人员可以自由编辑计费表达式，比如保证金计算公式 pv*0.0157 （pv是贷款本金，0.0157是保证金比例），比如每期服务费公式0.01*PMT(rate, n, pv, 0, false) （PMT是金融相关的函数，excel也内置了）。一开始公司代码库里有个用Spring EL实现的表达式计算公共Jar包。所以这个表达式计算需求就使用这个现成的Jar包实现了。</p>
 <p>直到一次测试时，发现一笔保证金少收了1分钱，当时一笔贷款金额为 3450元，保证金计算公式是 pv*0.0157 很简单。然而 3450*0.0157实际应该等于 54.165元，业务人员规定计算结果按四舍五入精确到分，应收54.17元保证金。 然而在系统里 3450*0.0157=54.16499999999999  当四舍五入精确到分时则变成了54.16元。</p>
@@ -76,14 +96,10 @@
     
     </summary>
     
-      <category term="Java" scheme="http://imasking.me/categories/Java/"/>
+      <category term="我的开源" scheme="http://imasking.me/categories/%E6%88%91%E7%9A%84%E5%BC%80%E6%BA%90/"/>
     
-    
-      <category term="Java" scheme="http://imasking.me/tags/Java/"/>
     
       <category term="FinExpr" scheme="http://imasking.me/tags/FinExpr/"/>
-    
-      <category term="开源" scheme="http://imasking.me/tags/%E5%BC%80%E6%BA%90/"/>
     
   </entry>
   
@@ -92,12 +108,12 @@
     <link href="http://imasking.me/2017/07/java-tech-stack.html"/>
     <id>http://imasking.me/2017/07/java-tech-stack.html</id>
     <published>2017-07-26T05:36:58.000Z</published>
-    <updated>2017-07-26T12:20:54.031Z</updated>
+    <updated>2017-07-31T07:28:17.912Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>做为一名Java后端开发工程师平时工作中需要接触到的技术数目繁多，为了给提升计划有个明确的指导，结合网上和自己的体会整理了如下技术图谱（适用于工作2-3年左右瓶颈期Java中高级开发工程师）。结合个人的工作实际情况和兴趣选择相应的技术进行提升。</p>
 </blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/17354-3be9ee51802958a7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="高级Java开发工程师技术栈"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/17354-30e5d6c0dc5d1927.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="高级Java开发工程师技术栈"></p>
 ]]></content>
     
     <summary type="html">
@@ -110,8 +126,6 @@
       <category term="技术提升" scheme="http://imasking.me/categories/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/"/>
     
     
-      <category term="Java" scheme="http://imasking.me/tags/Java/"/>
-    
   </entry>
   
   <entry>
@@ -119,7 +133,7 @@
     <link href="http://imasking.me/2017/07/be-a-master.html"/>
     <id>http://imasking.me/2017/07/be-a-master.html</id>
     <published>2017-07-20T05:39:55.000Z</published>
-    <updated>2017-07-26T12:20:45.652Z</updated>
+    <updated>2017-07-31T07:28:17.908Z</updated>
     
     <content type="html"><![CDATA[<p>本文转载自<a href="https://mp.weixin.qq.com/s/5PfaaWBFCw5-MuAnR7ABiQ" target="_blank" rel="external">李运华 InfoQ</a></p>
 <blockquote>
@@ -253,8 +267,6 @@
     
       <category term="技术提升" scheme="http://imasking.me/categories/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/"/>
     
-    
-      <category term="Java" scheme="http://imasking.me/tags/Java/"/>
     
   </entry>
   
